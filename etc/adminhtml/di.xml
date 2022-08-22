@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Chazki
+ * @copyright Chazki © 2020
+ * @package Chazki_ChazkiArg
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Shipping\Block\Adminhtml\Order\Tracking">
+        <plugin name="chazki_chazkiarg_plugin_ordertracking" type="Chazki\ChazkiArg\Plugin\OrderTracking" />
+    </type>
+
+    <type name="Magento\Shipping\Block\Adminhtml\Order\Tracking\View">
+        <plugin name="chazki_chazkiarg_plugin_ordertrackingview" type="Chazki\ChazkiArg\Plugin\OrderTrackingView" />
+    </type>
+
+    <type name="Magento\Shipping\Controller\Adminhtml\Order\Shipment\Save">
+        <plugin name="chazki_chazkiarg_plugin_ordershipmentsave" type="Chazki\ChazkiArg\Plugin\OrderShipmentSave" />
+    </type>
+</config>
+
+
+

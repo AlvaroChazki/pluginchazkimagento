@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Chazki
+ * @copyright Chazki © 2020
+ * @package Chazki_ChazkiArg
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_model_service_quote_submit_before">
+        <observer name="chazki_chazkiarg_sales_model_service_quote_submit_before" instance="Chazki\ChazkiArg\Observer\SalesModelServiceQuoteSubmitBefore" />
+    </event>
+</config>

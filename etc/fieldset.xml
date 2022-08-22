@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Chazki
+ * @copyright Chazki © 2020
+ * @package Chazki_ChazkiArg
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:DataObject/etc/fieldset.xsd">
+    <scope id="global">
+        <fieldset id="sales_convert_quote_address">
+            <field name="reference_note">
+                <aspect name="to_customer_address" />
+            </field>
+            <field name="ruc_number">
+                <aspect name="to_customer_address" />
+            </field>
+            <field name="reference_address">
+                <aspect name="to_customer_address" />
+            </field>
+        </fieldset>
+    </scope>
+</config>

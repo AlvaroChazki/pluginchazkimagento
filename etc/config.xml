@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Chazki
+ * @copyright Chazki © 2020
+ * @package Chazki_ChazkiArg
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <shipping>
+            <chazki_arg>
+                <active>0</active>
+                <api_key_live backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <api_key_testing backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <url_live>https://apps.chazki.com/api/v2</url_live>
+                <url_testing>https://qa.chazki.com/api/v2</url_testing>
+                <prefix>CHI</prefix>
+            </chazki_arg>
+        </shipping>
+        <carriers>
+            <chazkiargexpress>
+                <title>Chazki - Same Day</title>
+                <name>Chazki - Same Day</name>
+                <shipping_cost>10</shipping_cost>
+                <sort_order>1</sort_order>
+                <model>Chazki\ChazkiArg\Model\Carrier\ChazkiExpress</model>
+            </chazkiargexpress>
+            <chazkiargregular>
+                <title>Chazki - Next Day</title>
+                <name>Chazki - Next Day</name>
+                <shipping_cost>10</shipping_cost>
+                <sort_order>2</sort_order>
+                <model>Chazki\ChazkiArg\Model\Carrier\ChazkiRegular</model>
+            </chazkiargregular>
+<!--            <chazkiargscheduled>-->
+<!--                <title>Chazki - Programado</title>-->
+<!--                <name>Chazki - Programado</name>-->
+<!--                <shipping_cost>10</shipping_cost>-->
+<!--                <sort_order>15</sort_order>-->
+<!--                <model>Chazki\ChazkiArg\Model\Carrier\ChazkiScheduled</model>-->
+<!--            </chazkiargscheduled>-->
+        </carriers>
+
+        <customer>
+            <address_templates>
+                <text>{{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}
+                    {{depend company}}{{var company}}{{/depend}}
+                    {{if street1}}{{var street1}}
+                    {{/if}}
+                    {{depend street2}}{{var street2}}{{/depend}}
+                    {{depend street3}}{{var street3}}{{/depend}}
+                    {{depend street4}}{{var street4}}{{/depend}}
+                    {{if city}}{{var city}},  {{/if}}{{if region}}{{var region}}, {{/if}}{{if postcode}}{{var postcode}}{{/if}}
+                    {{var country}}
+                    {{depend telephone}}T: {{var telephone}}{{/depend}}
+                    {{depend fax}}F: {{var fax}}{{/depend}}
+                    {{depend vat_id}}VAT: {{var vat_id}}{{/depend}}
+                    {{depend reference_note}}{{var reference_note}}{{/depend}}
+                    {{depend ruc_number}}{{var ruc_number}}{{/depend}}
+                    {{depend reference_address}}{{var reference_address}}{{/depend}}
+                </text>
+                <oneline>{{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}, {{var street}}, {{var city}}, {{var region}} {{var postcode}}, {{var country}}, {{depend reference_note}}{{var reference_note}}{{/depend}},{{depend ruc_number}}{{var ruc_number}}{{/depend}},,{{depend reference_address}}{{var reference_address}}{{/depend}}</oneline>
+                <html><![CDATA[{{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}{{depend firstname}}<br />{{/depend}}
+{{depend company}}{{var company}}<br />{{/depend}}
+{{if street1}}{{var street1}}<br />{{/if}}
+{{depend street2}}{{var street2}}<br />{{/depend}}
+{{depend street3}}{{var street3}}<br />{{/depend}}
+{{depend street4}}{{var street4}}<br />{{/depend}}
+{{if city}}{{var city}},  {{/if}}{{if region}}{{var region}}, {{/if}}{{if postcode}}{{var postcode}}{{/if}}<br />
+{{var country}}<br />
+{{depend telephone}}T: <a href="tel:{{var telephone}}">{{var telephone}}</a>{{/depend}}
+{{depend fax}}<br />F: {{var fax}}{{/depend}}
+{{depend vat_id}}<br />VAT: {{var vat_id}}{{/depend}}
+{{depend reference_note}}<br />{{var reference_note}}{{/depend}}
+{{depend ruc_number}}<br />{{var ruc_number}}{{/depend}}
+{{depend reference_address}}<br />{{var reference_address}}{{/depend}}
+]]>
+                </html>
+                <pdf><![CDATA[{{depend prefix}}{{var prefix}} {{/depend}}{{var firstname}} {{depend middlename}}{{var middlename}} {{/depend}}{{var lastname}}{{depend suffix}} {{var suffix}}{{/depend}}|
+{{depend company}}{{var company}}|{{/depend}}
+{{if street1}}{{var street1}}|{{/if}}
+{{depend street2}}{{var street2}}|{{/depend}}
+{{depend street3}}{{var street3}}|{{/depend}}
+{{depend street4}}{{var street4}}|{{/depend}}
+{{if city}}{{var city}}, {{/if}}{{if region}}{{var region}}, {{/if}}{{if postcode}}{{var postcode}}{{/if}}|
+{{var country}}|
+{{depend telephone}}T: {{var telephone}}|{{/depend}}
+{{depend fax}}F: {{var fax}}|{{/depend}}|
+{{depend vat_id}}VAT: {{var vat_id}}{{/depend}}
+{{depend reference_note}}{{var reference_note}}{{/depend}}|
+{{depend ruc_number}}{{var ruc_number}}{{/depend}}|
+{{depend reference_address}}{{var reference_address}}{{/depend}}|
+]]></pdf>
+            </address_templates>
+        </customer>
+    </default>
+</config>

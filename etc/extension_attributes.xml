@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Chazki
+ * @copyright Chazki © 2020
+ * @package Chazki_ChazkiArg
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <extension_attributes for="Magento\Quote\Api\Data\AddressInterface">
+        <attribute code="reference_note" type="string"/>
+        <attribute code="ruc_number" type="string"/>
+        <attribute code="reference_address" type="string"/>
+    </extension_attributes>
+
+</config>

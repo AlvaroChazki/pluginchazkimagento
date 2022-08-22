@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Chazki
+ * @copyright Chazki © 2020
+ * @package Chazki_ChazkiArg
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="shipping">
+            <group id="chazki_arg" translate="label" type="text" sortOrder="900" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Chazki</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="server_endpoint" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Server Endpoint</label>
+                    <source_model>Chazki\ChazkiArg\Model\Config\Source\ServerEndpoint</source_model>
+                </field>
+
+
+<!--                <field id="url_live" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>URL Live</label>-->
+<!--                    <depends>-->
+<!--                        <field id="shipping/chazki_arg/server_endpoint">1</field>-->
+<!--                    </depends>-->
+<!--                </field>-->
+<!--                <field id="url_testing" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>URL Testing</label>-->
+<!--                    <depends>-->
+<!--                        <field id="shipping/chazki_arg/server_endpoint">0</field>-->
+<!--                    </depends>-->
+<!--                </field>-->
+
+
+                <field id="api_key_live" translate="label comment" type="obscure"  sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enterprise Key Live</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <comment>It is neccesary to generate the API Key from the Chazki Admin panel in order to use the API's services. To do that, you must login with an username and password provided by Chazki, and click on Integrations => Generate API KEY V2.</comment>
+                    <depends>
+                        <field id="shipping/chazki_arg/server_endpoint">1</field>
+                    </depends>
+                </field>
+                <field id="api_key_testing" translate="label comment" type="obscure"  sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enterprise Key Testing</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <comment>It is neccesary to generate the API Key from the Chazki Admin panel in order to use the API's services. To do that, you must login with an username and password provided by Chazki, and click on Integrations => Generate API KEY V2.</comment>
+                    <depends>
+                        <field id="shipping/chazki_arg/server_endpoint">0</field>
+                    </depends>
+                </field>
+                <field id="prefix" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tracking ID Prefix</label>
+                </field>
+
+
+
+
+                <field id="country_origin" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Country Origin</label>
+                </field>
+                <field id="region_state_origin" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Region/State Origin</label>
+                </field>
+                <field id="city_origin" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>City Origin</label>
+                </field>
+                <field id="address_origin" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Street Address Origin</label>
+                </field>
+                <field id="zip_code_origin" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>ZIP/Postal Code Origin</label>
+                </field>
+
+                <field id="notes_origin" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notes Origin</label>
+                </field>
+
+
+                <field id="address_reference_origin" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Address Reference Origin</label>
+                </field>
+                <field id="contact_name_origin" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Contact Name Origin</label>
+                </field>
+                <field id="contact_email_origin" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Contact Email Origin</label>
+                </field>
+                <field id="contact_phone_origin" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Contact Phone Origin</label>
+                </field>
+
+                <field id="ruc_number_origin" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Ruc Number Origin</label>
+                </field>
+
+
+<!--                <field id="contact_document_type" translate="label" type="select" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Contact Document Type</label>-->
+<!--                    <source_model>Chazki\ChazkiArg\Model\Config\Source\ContactDocumentType</source_model>-->
+<!--                </field>-->
+<!--                <field id="type_dni" translate="label" type="text" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>DNI</label>-->
+<!--                    <depends>-->
+<!--                        <field id="shipping/chazki_arg/contact_document_type">0</field>-->
+<!--                    </depends>-->
+<!--                </field>-->
+<!--                <field id="type_passport" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Passpport</label>-->
+<!--                    <depends>-->
+<!--                        <field id="shipping/chazki_arg/contact_document_type">1</field>-->
+<!--                    </depends>-->
+<!--                </field>-->
+
+
+
+            </group>
+        </section>
+
+        <section id="carriers" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="chazkiargregular" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="900">
+                <label>Chazki - Next Day Shipping</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Method Name</label>
+                </field>
+                <field id="export" translate="label" type="Chazki\ChazkiArg\Block\Adminhtml\Form\Field\ExportChazkiRegular" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Export</label>
+                </field>
+                <field id="import" translate="label" type="Chazki\ChazkiArg\Block\Adminhtml\Form\Field\Import" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Import</label>
+                    <backend_model>Chazki\ChazkiArg\Model\Config\Backend\ChazkiRegular</backend_model>
+                </field>
+                <field id="showmethod" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Method if Not Applicable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <frontend_class>shipping-skip-hide</frontend_class>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sort Order</label>
+                </field>
+            </group>
+            <group id="chazkiargexpress" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="920">
+                <label>Chazki - Same Day Shipping</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Method Name</label>
+                </field>
+                <field id="export" translate="label" type="Chazki\ChazkiArg\Block\Adminhtml\Form\Field\ExportChazkiExpress" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Export</label>
+                </field>
+                <field id="import" translate="label" type="Chazki\ChazkiArg\Block\Adminhtml\Form\Field\Import" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Import</label>
+                    <backend_model>Chazki\ChazkiArg\Model\Config\Backend\ChazkiExpress</backend_model>
+                </field>
+                <field id="showmethod" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Method if Not Applicable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <frontend_class>shipping-skip-hide</frontend_class>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sort Order</label>
+                </field>
+            </group>
+
+<!--            <group id="chazkiargscheduled" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="940">-->
+<!--                <label>Chazki - Programado Shipping</label>-->
+<!--                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">-->
+<!--                    <label>Enabled</label>-->
+<!--                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>-->
+<!--                </field>-->
+<!--                <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Title</label>-->
+<!--                </field>-->
+<!--                <field id="name" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Method Name</label>-->
+<!--                </field>-->
+<!--                <field id="export" translate="label" type="Chazki\ChazkiArg\Block\Adminhtml\Form\Field\ExportChazkiScheduled" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Export</label>-->
+<!--                </field>-->
+<!--                <field id="import" translate="label" type="Chazki\ChazkiArg\Block\Adminhtml\Form\Field\Import" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Import</label>-->
+<!--                    <backend_model>Chazki\ChazkiArg\Model\Config\Backend\ChazkiScheduled</backend_model>-->
+<!--                </field>-->
+<!--                <field id="showmethod" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Show Method if Not Applicable</label>-->
+<!--                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>-->
+<!--                    <frontend_class>shipping-skip-hide</frontend_class>-->
+<!--                </field>-->
+<!--                <field id="sort_order" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">-->
+<!--                    <label>Sort Order</label>-->
+<!--                </field>-->
+<!--            </group>-->
+        </section>
+    </system>
+</config>

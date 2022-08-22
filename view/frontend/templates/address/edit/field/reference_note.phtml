@@ -1,0 +1,24 @@
+<?php
+/**
+ * Copyright © 2020 Chazki. All rights reserved.
+ *
+ * @category Class
+ * @package  Chazki_ChazkiArg
+ * @author   Chazki
+ */
+?>
+<?php /** @var Chazki\ChazkiArg\Block\Address\Edit\Field\ReferenceNote $block */ ?>
+<?php $referenceNote = $block->getAddress()->getCustomAttribute('reference_note'); ?>
+<?php if (isset($referenceNote)): ?>
+    <?php $referenceNote = $referenceNote->getValue(); ?>
+<?php endif; ?>
+
+<div class="field">
+    <label class="label" for="new_field"><?php echo __('Reference Note') ?></label>
+    <label>
+        <input type="text"
+               name="reference_note"
+               value="<?= $block->escapeHtmlAttr($referenceNote ?? '') ?>"
+        />
+    </label>
+</div>

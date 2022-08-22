@@ -1,0 +1,36 @@
+{
+    "name": "alternative-chazki/pluginchazkimagento",
+    "description": "Shipping Method",
+    "keywords": [
+        "magento 2",
+        "magento 2 extension"
+    ],
+    "require": {
+        "php": "7.*",
+        "magento/framework": "*",
+        "magento/module-backend": "*",
+        "magento/module-catalog": "*",
+        "magento/module-config": "*",
+        "magento/module-directory": "*",
+        "magento/module-quote": "*",
+        "magento/module-sales": "*",
+        "magento/module-sales-rule": "*",
+        "magento/module-shipping": "*",
+        "magento/module-store": "*",
+        "magento/module-checkout": "*"
+    },
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Chazki\\ChazkiArg\\": ""
+        }
+    },
+    "version": "0.4.3"
+}
