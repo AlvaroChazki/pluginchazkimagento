@@ -6,7 +6,7 @@
         "magento 2 extension"
     ],
     "require": {
-        "php": "7.*",
+        "php": "8.*",
         "magento/framework": "*",
         "magento/module-backend": "*",
         "magento/module-catalog": "*",
